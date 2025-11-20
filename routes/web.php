@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 
-// HOME → tampilkan katalog
+// HOME
 Route::get('/', [ProductController::class, 'index'])->name('home');
 
 // UPLOAD PRODUK
@@ -13,7 +13,7 @@ Route::post('/produk', [ProductController::class, 'store'])->name('produk.store'
 Route::get('/produk', [ProductController::class, 'index'])->name('produk.index');
 
 
-// 🔥 ROUTE POST KOMENTAR + RATING (WAJIB UNTUK SRS‐06)
+//Komen
 Route::post('/produk/{id}/comment', [ProductController::class, 'storeComment'])
     ->name('produk.comment');
 
