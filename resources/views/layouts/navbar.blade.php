@@ -146,18 +146,18 @@
         }
 
         dropdownToggle.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevents triggering document click
+            event.stopPropagation();
             toggleDropdown();
         });
 
-        // Hide dropdown when <li> is clicked
+        
         dropdownMenu.querySelectorAll('.dropdown-item').forEach((li) => {
             li.addEventListener('click', () => {
                 hideDropdown();
             });
         });
 
-        // Hide dropdown when clicking outside
+        
         document.addEventListener('click', (event) => {
             if (!dropdownMenu.contains(event.target) && event.target !== dropdownToggle) {
                 hideDropdown();
