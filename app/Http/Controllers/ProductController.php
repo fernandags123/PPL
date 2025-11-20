@@ -25,7 +25,7 @@ class ProductController extends Controller
 
     KomentarRating::create([
         'product_id' => $id,
-        'user_id' => 1, // sementara hardcode
+        'user_id' => 1, 
         'rating' => $request->rating,
         'komentar' => $request->komentar,
     ]);
@@ -57,7 +57,6 @@ class ProductController extends Controller
             'gambar'            => 'image|mimes:jpg,jpeg,png,webp|max:4096'
         ]);
 
-        // kalau input kosong -> jadikan 0
         $discount = $request->filled('discount_percent') 
             ? (int) $request->discount_percent 
             : 0;
@@ -68,7 +67,7 @@ class ProductController extends Controller
         }
 
         Product::create([
-            'user_id'          => 1, // nanti bisa diganti Auth::id()
+            'user_id'          => 1,
             'nama_produk'      => $request->nama_produk,
             'deskripsi'        => $request->deskripsi,
             'harga'            => (int) $request->harga,
